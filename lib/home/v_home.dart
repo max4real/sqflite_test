@@ -10,16 +10,27 @@ class HomePage extends StatelessWidget {
     HomeController controller = Get.put(HomeController());
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.saveData();
+            },
             icon: const Icon(Icons.save),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.getData();
+            },
             icon: const Icon(Icons.smart_display),
           ),
-          const SizedBox()
+          IconButton(
+            onPressed: () {
+              controller.delete();
+            },
+            icon: const Icon(Icons.delete),
+          ),
+          SizedBox(width: Get.width)
         ],
       ),
     );
